@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>arith-memo</title>
+    <script src="arith-memo.js"></script>
+    <script src="ichigojam.js"></script>
+  </head>
+  <body>
+    <div>
+      <canvas id="main" width="1152" height="384"></canvas>
+    </div>
+    <div>
+      はやさ: <input type="range" id="speed_range" min="250" max="5000" step="250" style="width:600px;">
+      <span id="speed"></span>
+    </div>
+    
+    <p>
+      <h2>かけ算 (x)</h2>
+      <ul>
+	<li>
+	  1 から 9 の段 [<a href="?op=mul">1 から</a>] [<a href="?op=mul&s=1">ランダム</a>]
+	</li>
+	<li>
+	  1 の段 [<a href="?op=mul&x=1">1 から</a>] [<a href="?op=mul&x=1&s=1">ランダム</a>]
+	</li>
+	<li>
+	  2 の段 [<a href="?op=mul&x=2">1 から</a>] [<a href="?op=mul&x=2&s=1">ランダム</a>]
+	</li>
+	<li>
+	  3 の段 [<a href="?op=mul&x=3">1 から</a>] [<a href="?op=mul&x=3&s=1">ランダム</a>]
+	</li>
+	<li>
+	  4 の段 [<a href="?op=mul&x=4">1 から</a>] [<a href="?op=mul&x=4&s=1">ランダム</a>]
+	</li>
+	<li>
+	  5 の段 [<a href="?op=mul&x=5">1 から</a>] [<a href="?op=mul&x=5&s=1">ランダム</a>]
+	</li>
+	<li>
+	  6 の段 [<a href="?op=mul&x=6">1 から</a>] [<a href="?op=mul&x=6&s=1">ランダム</a>]
+	</li>
+	<li>
+	  7 の段 [<a href="?op=mul&x=7">1 から</a>] [<a href="?op=mul&x=7&s=1">ランダム</a>]
+	</li>
+	<li>
+	  8 の段 [<a href="?op=mul&x=8">1 から</a>] [<a href="?op=mul&x=8&s=1">ランダム</a>]
+	</li>
+	<li>
+	  9 の段 [<a href="?op=mul&x=9">1 から</a>] [<a href="?op=mul&x=9&s=1">ランダム</a>]
+	</li>
+      </ul>
+    </p>
+    
+    <p>
+      <h2>たし算 (+)</h2>
+      <ul>
+	<li>
+	  1 から 9 の段 [<a href="?op=add">1 から</a>] [<a href="?op=add&s=1">ランダム</a>]
+	</li>
+	<li>
+	  1 の段 [<a href="?op=add&x=1">1 から</a>] [<a href="?op=add&x=1&s=1">ランダム</a>]
+	</li>
+	<li>
+	  2 の段 [<a href="?op=add&x=2">1 から</a>] [<a href="?op=add&x=2&s=1">ランダム</a>]
+	</li>
+	<li>
+	  3 の段 [<a href="?op=add&x=3">1 から</a>] [<a href="?op=add&x=3&s=1">ランダム</a>]
+	</li>
+	<li>
+	  4 の段 [<a href="?op=add&x=4">1 から</a>] [<a href="?op=add&x=4&s=1">ランダム</a>]
+	</li>
+	<li>
+	  5 の段 [<a href="?op=add&x=5">1 から</a>] [<a href="?op=add&x=5&s=1">ランダム</a>]
+	</li>
+	<li>
+	  6 の段 [<a href="?op=add&x=6">1 から</a>] [<a href="?op=add&x=6&s=1">ランダム</a>]
+	</li>
+	<li>
+	  7 の段 [<a href="?op=add&x=7">1 から</a>] [<a href="?op=add&x=7&s=1">ランダム</a>]
+	</li>
+	<li>
+	  8 の段 [<a href="?op=add&x=8">1 から</a>] [<a href="?op=add&x=8&s=1">ランダム</a>]
+	</li>
+	<li>
+	  9 の段 [<a href="?op=add&x=9">1 から</a>] [<a href="?op=add&x=9&s=1">ランダム</a>]
+	</li>
+      </ul>
+    </p>
+    
+    <p>
+      <h2>ひき算 (-)</h2>
+      <ul>
+	<li>
+	  2 から 12 の段 [<a href="?op=sub">1 から</a>] [<a href="?op=sub&s=1">ランダム</a>]
+	</li>
+	<li>
+	  2 の段 [<a href="?op=sub&x=2">1 から</a>] [<a href="?op=sub&x=2&s=1">ランダム</a>]
+	</li>
+	<li>
+	  3 の段 [<a href="?op=sub&x=3">1 から</a>] [<a href="?op=sub&x=3&s=1">ランダム</a>]
+	</li>
+	<li>
+	  4 の段 [<a href="?op=sub&x=4">1 から</a>] [<a href="?op=sub&x=4&s=1">ランダム</a>]
+	</li>
+	<li>
+	  5 の段 [<a href="?op=sub&x=5">1 から</a>] [<a href="?op=sub&x=5&s=1">ランダム</a>]
+	</li>
+	<li>
+	  6 の段 [<a href="?op=sub&x=6">1 から</a>] [<a href="?op=sub&x=6&s=1">ランダム</a>]
+	</li>
+	<li>
+	  7 の段 [<a href="?op=sub&x=7">1 から</a>] [<a href="?op=sub&x=7&s=1">ランダム</a>]
+	</li>
+	<li>
+	  8 の段 [<a href="?op=sub&x=8">1 から</a>] [<a href="?op=sub&x=8&s=1">ランダム</a>]
+	</li>
+	<li>
+	  9 の段 [<a href="?op=sub&x=9">1 から</a>] [<a href="?op=sub&x=9&s=1">ランダム</a>]
+	</li>
+	<li>
+	  10 の段 [<a href="?op=sub&x=10">1 から</a>] [<a href="?op=sub&x=10&s=1">ランダム</a>]
+	</li>
+	<li>
+	  11 の段 [<a href="?op=sub&x=11">1 から</a>] [<a href="?op=sub&x=11&s=1">ランダム</a>]
+	</li>
+	<li>
+	  12 の段 [<a href="?op=sub&x=12">1 から</a>] [<a href="?op=sub&x=12&s=1">ランダム</a>]
+	</li>
+      </ul>
+    </p>
+    
+  </body>
+</html>
+  
